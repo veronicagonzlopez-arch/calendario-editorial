@@ -152,7 +152,12 @@ main{ padding:16px; }
 
 label.k{ font-size:12px; color:var(--muted); padding-top:8px; }
 
-input[type="text"], input[type="url"], input[type="time"], input[type="number"], select, textarea{
+input[type="text"], input[type="url"], input[type="time"]{
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+input[type="number"], select, textarea{
   width:100%;
   background:#ffffff;
   border:1px solid var(--line);
@@ -257,3 +262,25 @@ hr{
 select {
   color: var(--text);
 }
+/* Evita desbordes dentro de las filas */
+.row > div { min-width: 0; }
+
+/* File input que no se salga del card */
+.mediaWrap { min-width: 0; }
+.mediaWrap input[type="file"]{
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+/* Header que se oculta */
+.topbar{
+  transition: transform .22s ease, opacity .22s ease;
+  will-change: transform;
+}
+.topbar.is-hidden{
+  transform: translateY(-110%);
+  opacity: 0;
+}
+
