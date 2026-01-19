@@ -99,6 +99,10 @@ function statusClass(s){
   if(s === "Trabajando") return "working";
   return "process";
 }
+function pilarClass(pilar){
+  return "pilar-" + pilar.replace(/\s+/g, "-");
+}
+
 
 function escapeHtml(str){
   return String(str ?? "")
@@ -250,7 +254,8 @@ function render(){
 
       <div class="row">
         <label class="k">Pilar</label>
-        <select data-k="pilar">
+        <select data-k="pilar" class="${pilarClass(day.pilar)}">
+
           ${PILLARS.map(x=>`<option ${x===day.pilar?"selected":""}>${x}</option>`).join("")}
         </select>
       </div>
@@ -335,6 +340,24 @@ function render(){
       const id = card.dataset.id;
       const item = state.days.find(x => x.id === id);
       if(!item) return;
+      if (k === "pilar") {
+  // 1. Actualizar el valor en el estado
+  item.pilar = el.value;
+
+  // 2. Eliminar cualquier clase de pilar previa
+  el.classList.forEach(cls => {
+    if (cls.startsWith("pilar-")) {
+      el.classList.remove(cls);
+    }
+  });
+
+  // 3. Añadir SOLO la clase del pilar actual
+  el.classList.add(pilarClass(item.pilar));
+
+  saveState(state);
+  return;
+}
+
 
       // Subida de media
       if(k === "mediaUpload"){
