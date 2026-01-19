@@ -1,0 +1,211 @@
+:root{
+  --bg:#f6f7fb;
+  --card:#ffffff;
+  --muted:#5b6275;
+  --text:#111827;
+  --line:#e5e7eb;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background: var(--bg);
+  color:var(--text);
+}
+
+.topbar{
+  display:flex;
+  gap:16px;
+  align-items:flex-end;
+  justify-content:space-between;
+  padding:18px 16px;
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  background: rgba(246,247,251,.92);
+  backdrop-filter: blur(8px);
+}
+
+h1{ margin:0; font-size:18px; letter-spacing:.2px; }
+.sub{ margin:6px 0 0; color:var(--muted); font-size:12px; }
+
+.actions{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+button, .importBtn{
+  border:1px solid var(--line);
+  background:var(--card);
+  color:var(--text);
+  padding:10px 12px;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:12px;
+}
+button:hover, .importBtn:hover{ border-color:#cbd5e1; }
+
+.danger{ border-color:#f2b7b7; }
+
+.start{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  font-size:12px;
+  color:var(--muted);
+}
+
+.start input{
+  background:var(--card);
+  border:1px solid var(--line);
+  color:var(--text);
+  padding:8px 10px;
+  border-radius:10px;
+}
+
+.importBtn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+.importBtn input{ display:none; }
+
+main{ padding:16px; }
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(7, minmax(220px, 1fr));
+  gap:12px;
+}
+@media (max-width: 1200px){
+  .grid{ grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+}
+@media (max-width: 700px){
+  .grid{ grid-template-columns: 1fr; }
+}
+
+.card{
+  background: var(--card);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:12px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  box-shadow: 0 2px 12px rgba(17,24,39,.06);
+}
+
+.cardHeader{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.dayTitle{ margin:0; font-size:14px; }
+.dateLabel{ color:var(--muted); font-size:12px; margin-top:4px; }
+
+.badge{
+  font-size:11px;
+  padding:6px 8px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  color:var(--muted);
+  background:#f8fafc;
+}
+.badge.published{ border-color:#86efac; color:#166534; background:#ecfdf5; }
+.badge.working{ border-color:#93c5fd; color:#1d4ed8; background:#eff6ff; }
+.badge.process{ border-color:#fcd34d; color:#92400e; background:#fffbeb; }
+
+.row{
+  display:grid;
+  grid-template-columns: 100px 1fr;
+  gap:8px;
+  align-items:start;
+}
+
+label.k{ font-size:12px; color:var(--muted); padding-top:8px; }
+
+input[type="text"], input[type="url"], input[type="time"], input[type="number"], select, textarea{
+  width:100%;
+  background:#ffffff;
+  border:1px solid var(--line);
+  color:var(--text);
+  padding:8px 10px;
+  border-radius:10px;
+  font-size:12px;
+}
+
+textarea{
+  min-height:70px;
+  resize:vertical;
+}
+
+.small{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  padding-top:6px;
+}
+
+hr{
+  border:0;
+  border-top:1px solid var(--line);
+  margin:6px 0;
+}
+
+.footer{
+  padding:12px 16px;
+  color:var(--muted);
+  font-size:12px;
+  border-top:1px solid var(--line);
+}
+
+/* ==== Media gallery ==== */
+.mediaWrap input[type="file"]{
+  width:100%;
+  padding:8px;
+  border-radius:10px;
+  border:1px dashed var(--line);
+  background:#f9fafb;
+}
+
+.mediaGrid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:8px;
+  margin-top:8px;
+}
+
+.mediaItem{
+  border:1px solid var(--line);
+  border-radius:10px;
+  overflow:hidden;
+  background:#fff;
+  position:relative;
+}
+
+.mediaItem img, .mediaItem video{
+  width:100%;
+  height:90px;
+  object-fit:cover;
+  display:block;
+}
+
+.mediaDel{
+  position:absolute;
+  top:6px;
+  right:6px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.92);
+  color:var(--text);
+  border-radius:999px;
+  padding:4px 8px;
+  font-size:11px;
+  cursor:pointer;
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calendario Editorial · 2 semanas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Calendario editorial</h1>
+      <p class="sub">2 semanas · tarjetas por día · guardado automático</p>
+    </div>
+
+    <div class="actions">
+      <label class="start">
+        Inicio (lunes):
+        <input id="startDate" type="date" />
+      </label>
+
+      <button id="exportBtn" type="button">Exportar JSON</button>
+
+      <label class="importBtn" title="Importar un JSON previamente exportado">
+        Importar JSON
+        <input id="importInput" type="file" accept="application/json" />
+      </label>
+
+      <button id="resetBtn" type="button" class="danger">Reset</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="grid" class="grid" aria-label="Calendario de dos semanas"></section>
+  </main>
+
+  <footer class="footer">
+    <span>Tip: textos se guardan en localStorage. Archivos (media) se guardan en IndexedDB.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
