@@ -1,16 +1,34 @@
 :root{
-  --bg:#f6f7fb;
-  --card:#ffffff;
-  --muted:#5b6275;
-  --text:#111827;
-  --line:#e5e7eb;
+  /* Paleta Diseño con Alma */
+  --c-hielo: #bdc6d1;
+  --c-arena: #d0a57d;
+  --c-oliva: #303225;
+  --c-mar:   #869899;
+  --c-hueso: #f1ece7;
+  --c-nube:  #faf8f2;
+
+  /* Sistema UI */
+  --bg:   var(--c-nube);   /* fondo */
+  --card: #ffffff;         /* tarjetas como papel */
+  --text: var(--c-oliva);  /* texto principal */
+  --muted:#7a6f68;         /* texto secundario */
+  --line: #e6dfd9;         /* líneas suaves */
 }
+
 
 *{ box-sizing:border-box; }
 
 body{
   margin:0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  body{
+  font-family: "Bricolage Grotesque", system-ui, -apple-system, Segoe UI, Roboto,
+  letter-spacing: 0.2px; /* sutil, orgánico */
+}
+
+h1, h2{
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+}
+
   background: var(--bg);
   color:var(--text);
 }
@@ -90,6 +108,8 @@ main{ padding:16px; }
 }
 
 .card{
+  border-radius: 18px;
+  box-shadow: 0 6px 22px rgba(48,50,37,.08); /* oliva muy suave */
   background: var(--card);
   border:1px solid var(--line);
   border-radius:14px;
@@ -118,9 +138,10 @@ main{ padding:16px; }
   color:var(--muted);
   background:#f8fafc;
 }
-.badge.published{ border-color:#86efac; color:#166534; background:#ecfdf5; }
-.badge.working{ border-color:#93c5fd; color:#1d4ed8; background:#eff6ff; }
-.badge.process{ border-color:#fcd34d; color:#92400e; background:#fffbeb; }
+.badge.process{  border-color: var(--c-arena); background: #fff7ef; color:#7a4b1f; }
+.badge.working{  border-color: var(--c-mar);   background: #f1f6f6; color:#2d4a4a; }
+.badge.published{border-color: var(--c-hielo); background: #f4f7fb; color:#2d3a44; }
+
 
 .row{
   display:grid;
@@ -168,11 +189,8 @@ hr{
 
 /* ==== Media gallery ==== */
 .mediaWrap input[type="file"]{
-  width:100%;
-  padding:8px;
-  border-radius:10px;
-  border:1px dashed var(--line);
-  background:#f9fafb;
+  border: 1px dashed var(--c-hielo);
+  background: var(--c-hueso);
 }
 
 .mediaGrid{
