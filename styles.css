@@ -227,3 +227,33 @@ hr{
   font-size:11px;
   cursor:pointer;
 }
+/* ===== Pilares · colores pastel diferenciados ===== */
+
+.pilar-Educación {
+  background-color: #FFF3B0; /* amarillo pastel */
+}
+
+.pilar-Entretenimiento {
+  background-color: #FFD6A5; /* naranja pastel */
+}
+
+.pilar-Promocional-o-Venta {
+  background-color: #FFADAD; /* rojo pastel */
+}
+
+.pilar-Posicionamiento-de-marca {
+  background-color: #CFE3FF; /* azul pastel frío */
+}
+
+.pilar-Interacción {
+  background-color: #BFEAD6; /* verde pastel fresco */
+}
+
+.pilar-Noticias-o-Novedades {
+  background-color: #E6D9FF; /* morado pastel */
+}
+
+/* Texto siempre neutro */
+select {
+  color: var(--text);
+}
