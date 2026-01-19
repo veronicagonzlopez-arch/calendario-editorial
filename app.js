@@ -358,6 +358,31 @@ function render(){
   return;
 }
 
+// Header hide/show on scroll
+const topbar = document.querySelector(".topbar");
+let lastY = window.scrollY;
+
+window.addEventListener("scroll", () => {
+  const y = window.scrollY;
+
+  // si estás arriba del todo, siempre visible
+  if (y < 10){
+    topbar.classList.remove("is-hidden");
+    lastY = y;
+    return;
+  }
+
+  // si bajas, ocultar; si subes, mostrar
+  if (y > lastY + 6){
+    topbar.classList.add("is-hidden");
+  } else if (y < lastY - 6){
+    topbar.classList.remove("is-hidden");
+  }
+
+  lastY = y;
+}, { passive: true });
+
+
 
       // Subida de media
       if(k === "mediaUpload"){
